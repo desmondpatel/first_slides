@@ -1,0 +1,94 @@
+---
+title       : My First Slides
+subtitle    : Examples
+author      : JDP
+job         : QA
+logo        : logo.png
+biglogo     : logo.png
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax, quiz, bootstrap]    # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Welcome
+
+<hr/>
+<h2>Hello</h2>
+I am JDP.
+
+---
+
+## My Details
+
+I am a **NZ** citizen.
+
+--- &radio
+
+## Question 1
+
+What is 1 + 1?
+
+1. 1
+2. _2_
+3. 3
+4. 4
+
+*** .hint
+This is a hint
+
+*** .explanation
+This is an explanation
+
+--- &radio
+
+## Question 2
+
+What are values that x can take to satisfy the following quadratic equation?
+<p>
+$x^2$ - x - 6 = 0
+</p>
+
+1. 2, 3
+2. 2, -3
+3. _-2, 3_
+4. -2, -3
+5. None of the above
+
+*** .hint
+
+Factorise or use formula $$\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$ to find OR substitute and check
+
+*** .explanation
+
+Sum of roots = -1<br/>
+Product of roots = -6<br/>
+Hence factors are (x + 2) and (x - 3)
+
+---
+
+## Check Chunk Execution ##
+  
+```{r scplot, dev = 'png', fig.width = 8, fig.height = 5, error = T}
+library(ggplot2); 
+qplot(wt, mpg, data = mtcars) 
+```
+
+*** =pnotes
+
+```{r ref.label = "scplot", echo = T, eval = F}
+```
+
+--- #myslide
+
+<script>
+$('#myslide').on('slideenter', function(){
+  $(this).find('article')
+    .append('<iframe src="http://bl.ocks.org/mbostock/raw/1256572/"></iframe>')
+});
+$('#myslide').on('slideleave', function(){
+  $(this).find('iframe').remove();
+});
+</script>
